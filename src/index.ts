@@ -6,12 +6,10 @@ const prompt = promptSync();
 
 console.log("-----------------------------------------");
 const value = Number(prompt("Informe o valor do boleto: "));
-const expirationDate = utils.stubStringToDate(
+const expirationDate = utils.stringToDate(
   prompt("Informe a data de vencimento: "),
 );
-const paymentDate = utils.stubStringToDate(
-  prompt("Informe a data de pagamento: "),
-);
+const paymentDate = utils.stringToDate(prompt("Informe a data de pagamento: "));
 
 // processing
 const finalValue = bankSlip.stubCalculateAmountToPay(
