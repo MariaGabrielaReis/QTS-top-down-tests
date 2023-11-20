@@ -12,7 +12,7 @@ const expirationDate = utils.stringToDate(
 const paymentDate = utils.stringToDate(prompt("Informe a data de pagamento: "));
 
 // processing
-const finalValue = bankSlip.stubCalculateAmountToPay(
+const finalValue = bankSlip.calculateAmountToPay(
   value,
   expirationDate,
   paymentDate,

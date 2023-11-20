@@ -7,6 +7,10 @@ class Utils {
     const timeZone = -3;
     return new Date(year, month - 1, day, timeZone);
   }
+
+  stubPeriodInMonths(initialDate: Date, finalDate: Date) {
+    return 0;
+  }
 }
 
 const utils = new Utils();
