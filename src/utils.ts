@@ -8,8 +8,12 @@ class Utils {
     return new Date(year, month - 1, day, timeZone);
   }
 
-  stubPeriodInMonths(initialDate: Date, finalDate: Date) {
-    return 0;
+  periodInMonths(initialDate: Date, finalDate: Date) {
+    const initial = initialDate.getTime();
+    const final = finalDate.getTime();
+    const days = (final - initial) / 1000 / 60 / 60 / 24;
+    const months = days / 30;
+    return months;
   }
 }
 
