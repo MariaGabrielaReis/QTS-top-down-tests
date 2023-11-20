@@ -1,0 +1,25 @@
+import promptSync from "prompt-sync";
+import { bankSlip } from "./bankSlip";
+import { utils } from "./utils";
+
+const prompt = promptSync();
+
+console.log("-----------------------------------------");
+const value = Number(prompt("Informe o valor do boleto: "));
+const expirationDate = utils.stubStringToDate(
+  prompt("Informe a data de vencimento: "),
+);
+const paymentDate = utils.stubStringToDate(
+  prompt("Informe a data de pagamento: "),
+);
+
+// processing
+const finalValue = bankSlip.stubCalculateAmountToPay(
+  value,
+  expirationDate,
+  paymentDate,
+);
+
+console.log("=========================================");
+console.log("Valor final: ", finalValue);
+console.log("=========================================\n");
